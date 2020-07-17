@@ -1,19 +1,22 @@
-function startGame(){
- myGamePiece = new component (30,30, "red", 10,120);
- myGamePiece.gravity = 0.05;
- myScore = new component ("30px", "consolas", "black". 280,40, "text");
- myGameArea.start();
+function setup(){
+ createCanvas(400,400);
+ frameRate(75);
+ background(250, 223, 150);
+  let snake= {x: 150, y:150} 
+             {x: 140, y:150}, 
+             {x:140, y:150}, 
+             {x: 120, y: 150},
+             {x:110, y:150},];
+
+ function draw(){
+  function drawsnakePart(snakePart){
+    ctx.fillStylr = 'lightgreen';
+    ctx.strokestyle = 'darkgreen';
+    ctx.fillRect(snakepart.x,snakepart.y, 10,10);
+    ctx.strokeRect(snakepart.x, snakepart.y, 10,10);
   }
-var myGameArea ={
- canvas: document.createElement("canvas"),
- start : function(){
-  this.canvas.width = 480;
-  this.canvas.height = 270;
-  this.context = this.canvas.getContext("2d");
-  document.body.insertBefore(this.canvas, document.body.childNodes[0]);
-  this.frameNo = 0;
-   },
- clear : function(){
-  this.context.clearRect(0,0, this.canvas.width, this.canvas.height);
-   }
- }
+  function drawSnake(){
+    snake.forEach(drawSnakePart);
+  
+    
+   
