@@ -1,13 +1,19 @@
-function setup()
- createCanvas (400, 400);
- frameRate(75);
- background(161, 39, 79);
- 
- GameOn = true
- 
- function draw();
-  if (GameOn == true) {
-  //start of GameOn
-  background(161, 39, 79);
-  noStroke();
-  fill(24, 214, 144);
+function startGame(){
+ myGamePiece = new component (30,30, "red", 10,120);
+ myGamePiece.gravity = 0.05;
+ myScore = new component ("30px", "consolas", "black". 280,40, "text");
+ myGameArea.start();
+  }
+var myGameArea ={
+ canvas: document.createElement("canvas"),
+ start : function(){
+  this.canvas.width = 480;
+  this.canvas.height = 270;
+  this.context = this.canvas.getContext("2d");
+  document.body.insertBefore(this.canvas, document.body.childNodes[0]);
+  this.frameNo = 0;
+   },
+ clear : function(){
+  this.context.clearRect(0,0, this.canvas.width, this.canvas.height);
+   }
+ }
